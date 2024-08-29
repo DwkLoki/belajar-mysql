@@ -48,3 +48,11 @@ Dalam perintah diatas, password untuk user langsung tertulis dan mudah untuk dil
 > C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql -u root -p
 
 Untuk keluar dari MySQL client, ketik perintah: exit.
+
+# Aturan Penulisan Query MySQL
+1. Perintah SQL baru akan dieksekusi setelah tombol Enter ditekan. Selama query MySQL belum diakhiri dengan tanda ; atau \g maka tetap dianggap satu perintah.
+2. Query SQL tidak case sensitive, artinya huruf kecil dan kapital sama saja. (CREATE = create)
+3. whitespace (karakter spasi, tab, maupun enter) tidak berpengaruh apa-apa ke dalam SQL.
+4. Hampir untuk semua perintah query, MySQL akan menampilkan jumlah baris yang dipengaruhi dan lama waktu eksekusi
+5. Untuk menghapus perintah SQL yang sudah ditulis sebagian, bisa menggunakan karakter ( \c )
+6. Untuk query yang hasilnya melebihi lebar jendela cmd, akan menjadi sulit dibaca. MySQL menyediakan cara untuk merubah tampilan tabel menjadi baris. Yakni dengan mengganti tanda titik koma ( ; ) menjadi ( \G )
