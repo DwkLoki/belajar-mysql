@@ -56,3 +56,29 @@ Untuk keluar dari MySQL client, ketik perintah: exit.
 4. Hampir untuk semua perintah query, MySQL akan menampilkan jumlah baris yang dipengaruhi dan lama waktu eksekusi
 5. Untuk menghapus perintah SQL yang sudah ditulis sebagian, bisa menggunakan karakter ( \c )
 6. Untuk query yang hasilnya melebihi lebar jendela cmd, akan menjadi sulit dibaca. MySQL menyediakan cara untuk merubah tampilan tabel menjadi baris. Yakni dengan mengganti tanda titik koma ( ; ) menjadi ( \G )
+
+# Database, Character set dan Collation
+Character set (biasa disingkat sebagai charset) adalah kumpulan karakter yang bisa dipahami oleh komputer. Sedangkan collation adalah aturan pengurutan data berdasarkan charset.
+
+Charset mengatur bagaimana MySQL menyimpan setiap karakter ke dalam tabel. UTF-8 adalah salah satu contoh dari character set. 
+
+Pemahaman tentang charset dan collation ini sebenarnya baru diperlukan jika anda berencana menyimpan huruf non-latin ke dalam MySQL, seperti karakter jepang, korea, china atau arab. Untuk alphabet latin yang kita gunakan sehari-hari, charset dan collation tidak terlalu berpengaruh.
+
+Perkembangan Character set
+- ASCII  
+  7 bit (128 karakter). Pada era awal kemunculan komputer, ASCII ini adalah character set yang paling banyak dipakai. 128      character set yang terdapat di dalam ASCII sebenarnya sudah mencukupi untuk kebutuhan negara yang menggunakan aksara latin   seperti Amerika Serikat. Bahkan pada prakteknya tidak semua perangkat menggunakan ke-128 karakter ASCII standar. Kadang      ada yang hanya 95 dan ada juga yang hanya 64 karakter.
+
+  Masalah mulai muncul ketika ASCII digunakan pada negara yang butuh karakter non latin, seperti China, Korea, Jepang atau     Arab
+  
+- Extended-ASCII  
+  8 bit (256 karakter). Disinilah awal kemunculan bermacam-macam character set, karena tentu saja setiap negara butuh          karakter sendiri-sendiri. Terdapat 16 charset dan juga muncul berbagai character set non standar. IBM membuat EBCDIC yang    digunakan pada perangkat buatannya, Microsoft membuat Windows-1252, yang semakin menambah beragamnya jenis character set.
+
+- Unicode
+  16 bit (65.536 karakter). Character set ini sanggup menampung puluhan ribu karakter. Dengan kata lain Unicode mencoba        menggabungkan seluruh character set menjadi sebuah character set “universal”. Karakter yang tersedia sangat beragam,         mulai dari huruf latin, jepang, korea, arab, hingga huruf jawa kuno dan emoji (icon).
+
+- UTF-8
+  Penggunaan Unicode character set tampak sebagai solusi ideal, akan tetapi memiliki masalah di sisi kinerja dan efisiensi.    Karena tiap 1 karakter butuh 16 bit. Ruang memory menjadi masalah disini. Jika kita beralih menggunakan Unicode, setiap      dokumen akan berukuran 2 sampai 4 kali lipat ukuran asalnya.
+
+  Solusi dari masalah ini adalah merancang character set Unicode yang ‘fleksibel’. Character set ini diberi nama UTF-8         (Unicode Transformation Format 8 bit).
+
+  Saat ini UTF-8 sudah umum di gunakan terutama di bidang web programming. Pada juni 2017, sekitar 89% dari halaman web7       sudah menggunakan UTF-8 sebagai character set standar.
