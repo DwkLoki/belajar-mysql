@@ -82,3 +82,18 @@ Perkembangan Character set
   Solusi dari masalah ini adalah merancang character set Unicode yang ‘fleksibel’. Character set ini diberi nama UTF-8         (Unicode Transformation Format 8 bit).
 
   Saat ini UTF-8 sudah umum di gunakan terutama di bidang web programming. Pada juni 2017, sekitar 89% dari halaman web7       sudah menggunakan UTF-8 sebagai character set standar.
+
+# Tipe Data
+- numeric
+  - integer
+  - decimal
+  - float dan double
+  - bit
+- string
+  - char dan varchar
+- binary dan varbinary
+- text
+- blob
+- date
+- enum
+- set
